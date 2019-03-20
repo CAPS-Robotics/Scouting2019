@@ -67,7 +67,7 @@ class AnalyzeScreen {
 	void average() {
 		double sum = 0;
 		SaveData[] data = pullFiles();
-		SaveData out = new SaveData("", new double[8][2][3], new double[6][2][3], new double[6][2][3], new double[][][]{{{0, 0}},{{0, 0},{0, 0}}}, "Auto-Generated");
+		SaveData out = new SaveData("", new double[8][2][2], new double[6][2][2], new double[6][2][2], new double[][][]{{{0, 0}},{{0, 0},{0, 0}}}, new double[3], "Auto-Generated");
 		for(int i = 1; i < data.length; i++) {
 			if(data[i] != null) {
 				out.add(data[i], Math.sqrt(i));
@@ -75,9 +75,7 @@ class AnalyzeScreen {
 			}
 		}
 		out.div(sum);
-		System.out.println(Arrays.deepToString(out.get()));
 		out.sqrt();
-		System.out.println(Arrays.deepToString(out.get()));
 		try {
 			sketch.saveBytes(team.text.toUpperCase() + "_" + competition.text.toUpperCase() + "_AVERAGE.dat", serialize(out));
 		} catch(Exception e) {
