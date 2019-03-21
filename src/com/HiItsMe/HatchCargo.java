@@ -41,10 +41,10 @@ class HatchCargo {
 				if(hatch) hatchState = new double[]{0, 0}; else cargoState = new double[]{0, 0};
 				break;
 			case 1:
-				if(hatch) hatchState = new double[]{0, 1}; else cargoState = new double[]{0, 1};
+				if(hatch) hatchState = new double[]{1, 0}; else cargoState = new double[]{1, 0};
 				break;
 			case 2:
-				if(hatch) hatchState = new double[]{1, 0}; else cargoState = new double[]{1, 0};
+				if(hatch) hatchState = new double[]{0, 1}; else cargoState = new double[]{0, 1};
 				break;
 		}
 	}

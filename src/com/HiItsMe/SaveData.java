@@ -64,13 +64,13 @@ class SaveData implements Serializable {
 	double getError(SaveData compare) {
 		double de = 0;
 		if(compare.defense[0] > defense[0]) {
-			de += defense[0] - compare.defense[0];
+			de += (defense[0] - compare.defense[0])/5;
 		}
 		if(compare.defense[1] > defense[1]) {
-			de += defense[1] - compare.defense[1];
+			de += (defense[1] - compare.defense[1])/5;
 		}
 		if(defense[2] > compare.defense[1]) {
-			de += defense[2] - compare.defense[2];
+			de += compare.defense[2] - defense[2];
 		}
 		return get1Error(cs, compare.cs) + get1Error(r0, compare.r0) + get1Error(r1, compare.r1) + get1Error(climb, compare.climb) + de;
 	}
